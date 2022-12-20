@@ -1,0 +1,236 @@
+/* 기본설정 */
+* {
+  /* 
+        content : 글씨가 삽입되는 영역
+        border : 테두리 영역
+        padding : content와 border 사이
+        margin : border와 다른 태그 영역 사이
+    */
+  margin: 0;
+  padding: 0;
+  /* 
+        box-sizing - 테두리 영역의 크기 결정
+        box-sizing: border-box; - 지정한 CSS width 및 height를 전체 영역에 적용
+    */
+  box-sizing: border-box;
+}
+
+/* 바디 영역 */
+body {
+  color: #4a4a4a;
+}
+
+/* 맨위 배너영역 */
+.top_area {
+  height: 50px;
+  background-color: #2087c9;
+}
+
+/* 상위 배너안에 viewport */
+.top_viewport {
+  position: relative;
+  overflow: hidden;
+}
+
+.top_element {
+  width: 800%;
+  /* transition-duration: 0s; */
+  /* transform: translate3d(-3038px, 0px, 0px); */
+}
+
+.top_slide {
+  width: 1519px;
+  margin-right: 0px;
+  float: left;
+  display: block;
+}
+
+.top_area .top_element .top_slide > a {
+  display: inline-block;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* 헤더 영역 전체 */
+.header_area {
+  padding: 50px 0 60px 0;
+  display: inline-block;
+}
+
+.container {
+  box-sizing: border-box;
+  padding: 0 60px;
+  margin: auto;
+  max-width: 1320px;
+}
+
+/* 컨텐츠 영역만(헤더 제외) */
+.header_area .contents {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  /* padding: 0 60px; */
+  /* margin: 0 auto; */
+  /* margin-top: 20px; */
+  font-size: 13px;
+}
+
+.header_area .logo {
+  display: inline-block;
+}
+
+/* 로고만 */
+.logo img{
+  width: 230px;
+  /* height: auto; */
+  /* max-width: 240px; */
+  /* max-height: 240px; */
+}
+
+/* .list_menu라는 ul */
+.h_list_menu .list_menu {
+  display: flex;
+}
+
+/* 헤더 리스트안에 메뉴의 list */
+.contents .h_list_menu .list_menu li {
+  /* justify-content: flex-end; */
+  font-weight: bold;
+  margin-right: -0.8rem;
+  /* text-decoration-line: none; */
+  color: #4a4a4a;
+  /* list-style: none; */
+  cursor: pointer;
+  margin: 5px;
+  /* text-align: center; */
+}
+
+/* gnb메뉴바 영역 */
+.gnb_area {
+  height: 18px;
+  margin-bottom: 40px;
+  /* position: absolute; */
+  /* z-index: 5; */
+}
+
+.gnb_list {
+  box-sizing: border-box;
+  width: 1320px;
+  padding: 0 60px;
+  margin: 0 auto;
+}
+
+.g_menu_bar {
+  text-decoration-line: none;
+  color: #4a4a4a;
+  list-style: none;
+  box-sizing: border-box;
+  display: flex;
+  margin-left: -16px;
+  /* margin-bottom: 60px; */
+  padding: 0 16px;
+}
+
+.gnb_list_contents > .g_menu_bar .inner:hover > .inner_gnb {
+  visibility: visible;
+}
+
+/* .inner안에 ul의 css */
+.gnb_list_contents > .g_menu_bar > .inner > .inner_gnb {
+  background-color: #ffffff;
+  box-sizing: border-box;
+  /* position: absolute;
+  z-index: 9; */
+  visibility: hidden;
+  /* display: inline-block; */
+  text-align: center;
+  transform: translateX(-31%);
+  width: 120px;
+}
+
+/* .inner안에 li의 css */
+.gnb_list_contents > .g_menu_bar > .inner > .inner_gnb > li {
+  display: inline-block;
+  line-height: 30px;
+  margin: 10px;
+  width: 140px;
+  transform: translateX(-13%);
+}
+
+.g_menu_bar:hover + .inner_gnb {
+  visibility: visible;
+}
+
+#Banner {
+  width: 100%;
+  height: 80px;
+  background-color: white;
+  /* display: flex - 수평으로 정렬 */
+  display: flex;
+  /* 
+        align-items
+        세로 축을 기준으로 정렬
+    */
+  align-items: center;
+  /* 
+        justify-content
+        가로 축을 기준으로 좌우에 대한 정렬
+    */
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+#BannerBox {
+  margin-top: 575px;
+  width: 1200px;
+  /* 
+        overflow: hidden - 범위를 넘어가면 잘림
+    */
+  overflow: hidden;
+  z-index: -999;
+}
+
+#BannerBox > ul {
+  /* margin-top: 500px; */
+  list-style: none;
+  transition: all 1s;
+  /* 
+        display: inline-flex;와 flex 차이
+        flex;로 지정된 Flex Container는 Block 요소와 같은 성향(수직 쌓임)
+        nline-flex로 지정된 Flex Container는 Inline(Inline Block) 요소와 같은 성향(수평 쌓임)
+    */
+  display: inline-flex;
+}
+
+#BannerBox > ul > li {
+  min-width: 1200px;
+  text-align: center;
+  /* color: black; */
+}
+
+#BannerBox > ul > li > a > img {
+  width: 100%;
+  height: auto;
+}
+
+#PrevBtn,
+#NextBtn {
+  cursor: pointer;
+  width: 4rem;
+  height: 2rem;
+  z-index: 999;
+}
+
+.Best_Seller_Title {
+  margin-top: 700px;
+  padding-bottom: 55px;
+  text-align: center;
+}
+
+.Best_Seller_Title > h1 {
+  font-weight: bold;
+}
