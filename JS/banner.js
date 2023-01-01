@@ -1,11 +1,15 @@
 "use strict";
 
-// 배너                                       ul들
+// 상단 배너
+const topBanner = document.querySelector(".top_element");
+const topBannerItem = document.querySelectorAll(".top_slide");
+
+// 하단 배너                                      ul들
 const bannerBox = document.querySelector("#BannerBox > ul");
 //                                                li들
 const bannerItem = document.querySelectorAll(".Banner_Num");
 
-//버튼
+// 버튼
 const prevBtn = document.getElementById("PrevBtn");
 const nextBtn = document.getElementById("NextBtn");
 
@@ -19,6 +23,7 @@ const nextBtn = document.getElementById("NextBtn");
 //padding 포함한 px단위의 요소 가시너비 반환.(※ border, scrollbar, margin 제외)
 
 const size = bannerItem[0].clientWidth;
+const size2 = topBannerItem[0].clientWidth;
 
 let counter = 0;
 
@@ -52,3 +57,14 @@ setInterval(() => {
     bannerBox.style.transform = "translateX(" + -size * counter + "px)";
   }
 }, 5000);
+
+// TOP배너
+setInterval(() => {
+  if (counter < topBannerItem.length - 1) {
+    counter++;
+    topBanner.style.transform = "translateX(" + -size2 * counter + "px)";
+  } else if (counter === topBannerItem.length - 1) {
+    counter = 0;
+    topBanner.style.transform = "translateX(" + -size2 * counter + "px)";
+  }
+}, 4000);
